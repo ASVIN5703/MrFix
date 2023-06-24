@@ -16,6 +16,7 @@ import com.asvin.MrFix1.Service.UserService;
 
 @RestController
 
+//
 @RequestMapping("api/users")
 public class UserController {
     @Autowired
@@ -27,7 +28,7 @@ public class UserController {
 	}
 	@PostMapping
    public ResponseEntity<User>  userlogin(@RequestBody User user) {
-	
+	 System.out.println("hiowgwr");
 	   User savedUser= userservice.createUser(user);
 	   return new ResponseEntity<>(savedUser,HttpStatus.CREATED);
    }
