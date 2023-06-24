@@ -97,3 +97,7 @@ button {
     display: flex;
     padding-left: 30px;
 }
+.form-box .reg{
+	float: right;
+	padding:10px
+}

@@ -1,0 +1,131 @@
+*{
+    padding:0%;
+    margin:0%;
+    background-color: aliceblue;
+}
+body{
+    min-height: 100vh;;
+    width: 100%;;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    background-image: linear-gradient(rgb(4,9,30,0.1),rgb(4,9,30,0.1)),url("/dashboard_user/images/bg2.avif");
+}
+.container{
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    position:absolute;
+    width: 500px;
+    border:1px solid black;
+    height:590px;
+    padding-left:55px;
+    padding-top: 50px;
+    border-radius: 15px;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+.container h2{
+    font-size: 50px;
+    margin-bottom:15px;
+    margin-left: 2px;
+    margin-bottom: 25px;
+}
+.container input.text{
+    width: 80%;
+    height: 45px;
+    padding: 0 20px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid rgb(185, 207, 240);
+    font-size: 17px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;   
+}
+
+.container .img ion-icon{ 
+    position: relative;
+    font-size: 20px;
+    cursor: pointer;
+    top:5px;
+}
+
+.container .img input .btn{
+    cursor: pointer;
+    font-size: 17px;
+}
+.container .img{
+    height:40px;
+    margin-bottom: 0px;
+    margin-bottom: 15px;
+    
+}
+.container button {
+    width: 200px;
+    padding:10px 30px;
+    font-size: 17px;
+    background-color: rgb(46, 46, 252);
+    border-radius: 25px;
+    color: aliceblue;
+    margin-left:25%;
+    border-color: rgb(46, 46, 252);
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;    
+}
+.container button:hover{
+    background-color: blue;
+    font-size: 18px;
+    box-shadow: 0 10px 15px rgba(0,0,0,.3);
+    transform: scale(1.03);
+}
+.container .out{
+    position: absolute;
+    font-size: 30px;
+    background-color: red;
+    top: 70px;
+    color: white;
+    right: 65px;
+    border-radius: 2px;
+    cursor: pointer;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;    
+
+}
+.container .out:hover{
+    box-shadow: 0 10px 15px rgba(0,0,0,.4);
+}
+
+.container .upload{
+    width:100px;
+    position:relative;
+    margin:auto;
+}
+
+.container .upload img{
+    border-radius: 50%;
+    border:6px solid #0863eb;
+
+}
+
+.container .upload .round{
+    position:absolute;
+    bottom: 0;
+    right: 0;
+    background: #e0102b16;
+    width: 32px;
+    height:32px;
+    line-height: 33px;
+    text-align: center;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.container .upload .round input[type='file']{
+    position:absolute;
+    transform: scale(2);
+    opacity:0;
+    
+}
+
+input[type=file]::-webkit-file-upload-button{
+    cursor:pointer;
+}
+
+

@@ -1,0 +1,211 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    min-height:100vh;
+    background: whitesmoke;
+    background-color: rgb(244, 244, 244);
+}
+.navigation{
+    position:fixed;
+    top:20px;
+    left:20px;
+    bottom:20px;
+    background-color: rgb(64, 64, 237);
+    width:300px;
+    border-radius: 10px;
+    box-sizing: initial;
+    border-left: 5px solid rgb(64, 64, 237);
+}
+.navigation ul{
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+   /* background-color: orange;*/
+    padding-left: 5px;
+    padding-top: 40px;
+}
+.navigation ul li {
+    position:relative;
+    list-style: none;
+    width:100%;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    /*background-color: rgb(71, 96, 87); */
+    
+}
+.navigation ul li.active{
+    background: whitesmoke;
+}
+.navigation ul li a{
+    list-style: none;
+    color: aliceblue;
+    text-decoration: none;
+    width:100%;
+    /*background-color: rgb(145, 135, 122);*/
+    display:block;
+    display:flex;
+    /*border-style: solid;*/
+}
+.navigation ul li.active a{
+    color:black;
+}
+.navigation ul li a .icon{
+    position:relative;
+    display:block;
+    min-width: 60px;
+    height: 60px;
+    line-height: 70px;
+    text-align: center;
+    /*background-color: brown;*/
+}
+.navigation ul li a .icon ion-icon{
+    font-size: 1.5em;
+}
+.navigation ul li a .title{
+    position:relative;
+    display:block;
+    padding-left:10px;
+    min-width: 60px;
+    height: 60px;
+    line-height: 60px;
+    /*background-color: rgb(25, 122, 39);*/
+}
+.container{
+    padding:15px 5%;
+    padding-bottom: 100px;
+    margin-left: 340px;
+    margin-top: 20px;
+    margin-right: 10px;
+}
+.container .box-container{
+    width: 100vw;
+    display: flex;
+    border-color: aqua;
+}
+.container .box-container a{
+    text-decoration: none;
+    color: black;
+}
+.container header{
+    padding:0px 0px 15px 0px;
+}
+.container .box-container .box{
+    position:relative;
+    box-shadow: 0 10px 10px rgba(0,0,0,.2);
+    border-radius: 5px;
+    background: #fff;
+    text-align: center;
+    padding:20px 10px;
+    max-height: 100px;
+    min-width: 250px;
+    margin-right: 10px;
+}
+.container .box-container .box .box-name{
+    margin-bottom: 10px;
+}
+.container .box-container .box .count{
+    padding:10px;
+}
+.container .box-container .box:hover{
+    box-shadow: 0 10px 15px rgba(0,0,0,.3);
+    transform: scale(1.03);
+}
+.issue-btn{
+    padding:10px;
+    height: 100px;
+    padding-bottom: 0px;
+    margin-top: 10px;
+    margin-right: 10px;
+    justify-content: center;
+    text-align: center;
+    /*background-color: aquamarine;*/
+}
+.issue-btn a{
+    text-decoration: none;
+    color: black;
+    font-size:23px;
+    text-align: center;
+}
+.issue-btn a .btn{  
+    border-radius: 25px;
+    width: 150px;
+    height:50px;
+    padding-top: 10px;
+    box-shadow: 0 5px 10px rgba(0,0,0,.2);
+    border: none;
+    text-align: center;
+    margin-top: 10px;
+    margin-left: 4px;
+    color:aliceblue;
+}
+.issue-btn a .report-btn{  
+    background-color:rgb(0, 170, 20);
+    position: relative;
+    left:170px;
+}
+.issue-btn a .add-btn{  
+    background-color:rgb(204, 233, 75);
+    position: relative;
+    bottom:60px;
+}
+.issue-btn a .btn:hover{
+    box-shadow: 0 10px 15px rgba(0,0,0,.3);
+    color: rgb(228, 238, 243);
+    transform: scale(1.03);
+}
+.issue-btn a .btn .icon{
+    position:relative;
+    top: 5px;
+}
+.problem-list{
+    /*background-color: aqua;*/
+    list-style: none;
+}
+.problem-list li{
+    position: a;
+    box-shadow: 0 10px 10px rgba(0,0,0,.2);
+    border-radius: 5px;
+    background: #fff;
+    text-align: center;
+    min-height: 70px;
+    min-width: 250px;
+    margin-top: 15px;
+    display: flex;
+}
+.problem-list .prb-no,.prb-statement,.prb-status{
+    position: relative;
+    font-size: 18px;
+    top: 15px;
+}
+.prb-no{
+    min-width: 40px;
+    max-height: 40px;
+    position: absolute;
+}
+.prb-statement{
+    position: relative;
+    max-height: 40px;
+    width: 300px;
+    left: 20px;
+}
+.prb-status{
+    position: relative;
+    max-height: 40px;
+    width: 150px;
+    left: 10px;
+    border-radius: 30px;
+}
+
+.problem-list .completed{
+    background-color: rgba(48, 70, 240, 0.792);
+}
+.problem-list .on-process{
+    background-color: rgba(48, 70, 240, 0.792);
+}
+.problem-list .pending{
+    background-color: rgba(48, 70, 240, 0.792);
+}

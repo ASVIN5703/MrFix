@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" xlms:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage</title>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+
+    <link rel="stylesheet" href="/css/manage.css">
+</head>
+<body>
+    <div class="navigation">
+        <ul>
+            <li class="list">
+                <a th:href="@{/adprofile}">
+                    <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
+                    <span class="title">Profile</span>
+                </a>
+            </li>
+            <li class="list ">
+              <a th:href="@{/addashboard}">                    <span class="icon"><ion-icon name="clipboard-outline"></ion-icon></span>
+                    <span class="title">Dash Board</span>
+                </a>
+            </li>
+            <li class="list ">
+              <a th:href="@{/complaints/view}">
+                    <span class="icon"><ion-icon name="document-text-outline"></ion-icon></span>
+                    <span class="title">Complaints</span>
+                </a>
+            </li>
+            <li class="list active ">
+              <a th:href="@{/Manage}">
+				    <span class="icon"><ion-icon name="browsers-outline"></ion-icon></span>
+
+                    <span class="title">Manage</span>
+                </a>
+            </li>
+            <li class="list ">
+              <a th:href="@{/viewfeedbacks/all}">
+                <span class="icon"><ion-icon name="chatbubbles-outline"></ion-icon></span>
+                    <span class="title">Feedback</span>
+                </a>
+            </li>
+             <li class="list">
+              <a th:href="@{/viewfeedbacks/all}">
+                <span class="icon"><ion-icon name="log-out-outline"></ion-icon></span>
+                    <span class="title">Sign out</span>
+                </a>
+            </li>
+           
+        </ul>
+    </div>
+    <div class="container">
+        <header><h1>Manage</h1><br><hr></header>
+        <form role="form" th:action="@{/allusers/view}"method="get"> 
+        <div class="searchBox">
+                       <input class="searchInput"type="text" name="name" placeholder="Search">
+          
+
+            <button class="searchButton">
+                <ion-icon name="search-outline">
+                    search
+                </ion-icon>
+            </button>
+            
+        </div>
+        </form>
+      		<a th:href="@{/allusers}"><button class="view-all">View All</button></a>     	
+        <div class="tabel_user">
+        <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>
+                  User Name
+                </th>
+                <th>
+                  Password
+                </th>
+                <th>
+                  E-mail
+                </th>
+                <th>Contact</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr th:each="all : ${allUsers}">
+                <td   th:text="${all.user_id}">
+                    
+                  </td>
+                <td  th:text="${all.username}">
+                  
+                </td>
+                <td th:text="${all.useremail}">
+                 
+                </td>
+                <td th:text="${all.userpass}">
+                 
+                </td>
+                <td th:text="${all.usercontact}">
+                   
+                  </td>
+                <td class='select'>
+                  <a class='button' th:href="@{/upusers}">
+                    <i class='fas fa-edit' style='font-size:20px ;color:darkgreen'></i>
+               
+                  </a>
+                  
+                  <a class='button' th:href="@{/deleteusers/{user_id}(user_id=${all.user_id})}">
+					  <i class="fa fa-trash" style='font-size:20px ;color:red'></i>
+				  </a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          </div>
+        </div>
+    </div>
+</body>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script>
+    //add active class in selected list item
+    let list=document.querySelectorAll('.list');
+    for(let i=0;i<list.length;i++){
+        list[i].onclick=function(){
+            let j=0;
+            while(j<list.length){
+                list[j].className='list';
+                j++;
+            }
+            list[i].className='active';
+        }
+    }
+</script>
+</html>

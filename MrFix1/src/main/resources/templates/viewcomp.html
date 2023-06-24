@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en"   xmlns:th="http://www.thymeleaf.org" >
+<head>
+   
+    <title>Complaints</title>
+
+
+      <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <link rel="stylesheet" href="/css/complaintprofile.css">
+
+</head>
+
+<body>	
+     <!--division for menu bar-->
+    <div class="navigation">
+        <!--creating a unordered list-->
+        <ul>
+            <!--list items-->
+            <li class="list">
+                <a th:href="@{/adprofile}">
+                    <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
+                    <span class="title">Profile</span>
+                </a>
+            </li>
+            <li class="list ">
+                <a th:href="@{/addashboard}">
+                    <span class="icon"><ion-icon name="clipboard-outline"></ion-icon></span>
+                    <span class="title">Dash Board</span>
+                </a>
+            </li>
+            <li class="list  active">
+                <a th:href="@{/complaints/view}">
+                    <span class="icon"><ion-icon name="document-text-outline"></ion-icon></span>
+                    <span class="title">Complaints</span>
+                </a>
+            </li>
+             <li class="list ">
+                <a th:href="@{/Manage}">
+                    <span class="icon"><ion-icon name="browsers-outline"></ion-icon></span>
+                    <span class="title">Manage</span>
+                </a>
+            </li>
+            <li class="list">
+                <a th:href="@{/viewfeedbacks/all}">
+                    <span class="icon"><ion-icon name="chatbubbles-outline"></ion-icon></span>
+                    <span class="title">Feedback</span>
+                </a>
+            </li>
+            <li class="list">
+                <a th:href="@{/adminlogin}">
+                    <span class="icon"><ion-icon name="log-out-outline"></ion-icon></span>
+                    <span class="title">Sign out</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+     <!--right side division-->
+    <div class="container">
+    
+      
+        <header><h1>Complaints</h1><br><hr></header>
+        
+             
+      
+        <table border="3" class="table table-striped table-responsive-md">
+            <thead>
+                <tr>
+                    <th>Compid</th>
+                    <th>Complainant</th>
+                    <th>Subject</th>
+                    <th>Location</th>
+                    <th>Issue</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                 <tr th:each="complaint : ${listcomplaints}">
+                    <td th:text="${complaint.complaintId}"></td>
+                    <td th:text="${complaint.complainant}"></td>
+                     <td th:text="${complaint.sub}"></td> 
+                        <td th:text="${complaint.location}"></td>
+                    <td th:text="${complaint.issues}"></td>
+                    <td ><button>Take</button></td>
+                     
+                     
+                   
+                     
+                </tr>
+            </tbody>
+      
+        </table>
+        </div>
+              </div> 
+    </div>
+</body>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script>
+    //add active class in selected list item
+    let list=document.querySelectorAll('.list');
+    for(let i=0;i<list.length;i++){
+        list[i].onclick=function(){
+            let j=0;
+            while(j<list.length){
+                list[j].className='list';
+                j++;
+            }
+            list[i].className='active';
+        }
+    }
+</script>
+</html>

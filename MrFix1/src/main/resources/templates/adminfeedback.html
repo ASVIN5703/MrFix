@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" xlmns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback</title>
+    <link rel="stylesheet" href="css/adfeedback.css">
+</head>
+<body>
+    <div class="navigation">
+        <ul>
+            <li class="list">
+                <a th:href="@{/adprofile}">
+                    <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
+                    <span class="title">Profile</span>
+                </a>
+            </li>
+            <li class="list ">
+                <a th:href="@{/addashboard}">
+                    <span class="icon"><ion-icon name="clipboard-outline"></ion-icon></span>
+                    <span class="title">Dash Board</span>
+                </a>
+            </li>
+             <li class="list ">
+                <a th:href="@{/complaints/view}">
+                    <span class="icon"><ion-icon name="document-text-outline"></ion-icon></span>
+                    <span class="title">Complaints</span>
+                </a>
+            </li>
+             <li class="list ">
+                <a th:href="@{/Manage}">
+                    <span class="icon"><ion-icon name="browsers-outline"></ion-icon></span>
+                    <span class="title">Manage</span>
+                </a>
+            </li>
+            <li class="list active">
+                <a th:href="@{/viewfeedbacks/all}">
+                    <span class="icon"><ion-icon name="chatbubbles-outline"></ion-icon></span>
+                    <span class="title">Feedback</span>
+                </a>
+            </li>
+            <li class="list">
+                <a th:href="@{/adminlogin}">
+                    <span class="icon"><ion-icon name="log-out-outline"></ion-icon></span>
+                    <span class="title">Sign out</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="container">
+        <header><h1>Feedback</h1><br><hr></header>
+        <form action="issue_details">
+            <textarea name="comment" placeholder="Your feedback..."></textarea>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script>
+    //add active class in selected list item
+    let list=document.querySelectorAll('.list');
+    for(let i=0;i<list.length;i++){
+        list[i].onclick=function(){
+            let j=0;
+            while(j<list.length){
+                list[j].className='list';
+                j++;
+            }
+            list[i].className='active';
+        }
+    }
+</script>
+</html>

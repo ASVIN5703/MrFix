@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+    <section class="home">
+        <nav>
+            <div class="title-container">
+                <img src="css/logo2.png" alt="Logo">
+                <h1>Mr Fix</h1>
+            </div>
+            <div class="menu-links" id="menu-links">
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="">News</a></li>
+                    <li><a href="">Team</a></li>
+                    <li><a href="">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="select_container">
+			
+            <div class="select select-a">
+				
+                <img src="css/ad.jpg" alt="">
+                <div class="layer"><a th:href="@{/adminlogin}"><h3>Admin  </h3></a></div>
+             
+                </div>
+            <div class="select select-u">
+                <img src="css/user.png" alt="">
+                <div class="layer">
+                   <a th:href="@{/userlogin}"> <h3>User</h3></a>
+                </div>
+            </div>
+           
+        </div>
+    </section>
+    
+</body>
+</html>

@@ -18,9 +18,35 @@ public class User {
     private String username;
 	@Column(name="user_pass")
 	private String userpass;
-	@Column(name="user_email",unique=true)
+	@Column(name="user_email")
     private String useremail;
-	
+    @Column(name="user_contact")
+    private String usercontact;
+    
+	public String getUsername() {
+		return username;
+	}
+	public void setUsername(String username) {
+		this.username = username;
+	}
+	public String getUserpass() {
+		return userpass;
+	}
+	public void setUserpass(String userpass) {
+		this.userpass = userpass;
+	}
+	public String getUseremail() {
+		return useremail;
+	}
+	public void setUseremail(String useremail) {
+		this.useremail = useremail;
+	}
+	public String getUsercontact() {
+		return usercontact;
+	}
+	public void setUsercontact(String usercontact) {
+		this.usercontact = usercontact;
+	}
 	public String getUser_pass() {
 		return userpass;
 	}
@@ -44,6 +70,11 @@ public class User {
 	}
 	public void setUser_email(String useremail) {
 		this.useremail = useremail;
+	}
+	@Override
+	public String toString() {
+		return "User [user_id=" + user_id + ", username=" + username + ", userpass=" + userpass + ", useremail="
+				+ useremail + ", usercontact=" + usercontact + "]";
 	}
 	
      		

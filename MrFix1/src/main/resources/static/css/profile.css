@@ -1,0 +1,118 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    min-height:100vh;
+    background: whitesmoke;
+}
+.navigation{
+    position:fixed;
+    top:20px;
+    left:20px;
+    bottom:20px;
+    background-color: rgb(64, 64, 237);
+    width:300px;
+    border-radius: 10px;
+    box-sizing: initial;
+    border-left: 5px solid rgb(64, 64, 237);
+}
+.navigation ul{
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+   /* background-color: orange;*/
+    padding-left: 5px;
+    padding-top: 40px;
+}
+.navigation ul li {
+    position:relative;
+    list-style: none;
+    width:100%;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    /*background-color: rgb(71, 96, 87); */
+    
+}
+.navigation ul li.active{
+    background: whitesmoke;
+}
+.navigation ul li a{
+    list-style: none;
+    color: aliceblue;
+    text-decoration: none;
+    width:100%;
+    /*background-color: rgb(145, 135, 122);*/
+    display:block;
+    display:flex;
+    /*border-style: solid;*/
+}
+.navigation ul li.active a{
+    color:black;
+}
+.navigation ul li a .icon{
+    position:relative;
+    display:block;
+    min-width: 60px;
+    height: 60px;
+    line-height: 70px;
+    text-align: center;
+    /*background-color: brown;*/
+}
+.navigation ul li a .icon ion-icon{
+    font-size: 1.5em;
+}
+.navigation ul li a .title{
+    position:relative;
+    display:block;
+    padding-left:10px;
+    min-width: 60px;
+    height: 60px;
+    line-height: 60px;
+    /*background-color: rgb(25, 122, 39);*/
+}
+.container{
+    padding:15px 5%;
+    padding-bottom: 100px;
+    margin-left: 340px;
+    margin-top: 30px;
+    margin-right: 10px;
+}
+.container .details{
+    margin-top: 20px;
+    position:relative;
+    padding:10px;
+}
+.container  input{
+    border:none;
+    border-radius: 5px;
+}
+.container .username{
+    box-shadow: 0 10px 15px rgba(0,0,0,.3);
+    height:40px;
+    width:250px;
+}
+.container .email{
+    box-shadow: 0 10px 15px rgba(0,0,0,.3);
+    height:40px;
+    width:250px;
+}
+.container .contact{
+    
+    box-shadow: 0 10px 15px rgba(0,0,0,.3);
+    height:40px;
+    width:250px;
+}
+.container .save {
+    padding: 50px;
+    display: flex;
+    justify-content: left;
+    margin-left: 20px;
+}
+.container .save button{
+    width:100px;
+    border-radius: 5px;
+    height: 30px;
+}

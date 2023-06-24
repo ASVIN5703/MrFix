@@ -1,0 +1,22 @@
+
+
+.account-activation-message{
+	text-align: center;
+	font-weight: bold;
+	font-size: 50px;
+}
+
+.login-page-link{
+	text-align: center;
+	font-weight: bold;
+	font-size:30px;
+}
+
+.tick-image{
+	
+	text-align: center;
+}
+
+.img{
+	border-radius: 50%;
+}

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dash board</title>
+    <link rel="stylesheet" href="/css/admindashboard.css">
+</head>
+<body>
+    <div class="navigation">
+        <ul>
+            <li class="list">
+                <a th:href="@{/adprofile}">
+                    <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
+                    <span class="title">Profile</span>
+                </a>
+            </li>
+            <li class="list active">
+                <a href="#">
+                    <span class="icon"><ion-icon name="clipboard-outline"></ion-icon></span>
+                    <span class="title">Dash Board</span>
+                </a>
+            </li>
+              <li class="list ">
+                <a th:href="@{/complaints/view}">
+                    <span class="icon"><ion-icon name="document-text-outline"></ion-icon></span>
+                    <span class="title">Complaints</span>
+                </a>
+            </li>
+            <li class="list ">
+                <a th:href="@{/Manage}">
+                    <span class="icon"><ion-icon name="browsers-outline"></ion-icon></span>
+                    <span class="title">Manage</span>
+                </a>
+            </li>
+            <li class="list">
+                <a th:href="@{/viewfeedbacks/all}">
+                    <span class="icon"><ion-icon name="chatbubbles-outline"></ion-icon></span>
+                    <span class="title">Feedback</span>
+                </a>
+            </li>
+            <li class="list">
+                <a th:href="@{/adminlogin}">
+                    <span class="icon"><ion-icon name="log-out-outline"></ion-icon></span>
+                    <span class="title">Sign out</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="container">
+        <header><h1>Dash Board</h1><br><hr></header>
+        <div class="box-container">
+			<div class="row-1">
+            <a href="">
+            <div class="box">
+                <h3 class="box-name">Total</h3>
+                <div class="count">0</div>
+            </div></a>
+            <a href=""><div class="box">
+                <h3 class="box-name">On progress</h3>
+                <div class="count">0</div>
+            </div></a>
+            </div>
+            <div class="row-1">
+            <a href="">
+            <div class="box">
+                <h3 class="box-name">Completed</h3>
+                <div class="count">0</div>
+            </div></a>
+            <a href="">
+            <div class="box">
+                <h3 class="box-name">Pending</h3>
+                <div class="count">0</div>
+            </div></a>
+            </div> 
+        </div>
+        <div class="issue-btn">
+			  <a th:href="@{/report}">
+                <div class="report-btn btn">
+				 
+                   <span>	 Report</span>	
+                    <span class="icon"><ion-icon name="save-outline"></ion-icon></span>
+                     
+                </div>
+             
+                 </a>
+                 <a th:href="@{/addusers}">
+                <div class="add-btn btn">
+                    <span>Add User</span>
+                    <span class="icon"><ion-icon name="add-outline"></ion-icon></span>
+                </div>
+                 	 </a>
+         
+        </div>
+            <ul class="problem-list">
+                <li>
+                        <div class="prb-no">1</div>
+                        <div class="prb-statement">problem1 statement</div>
+                        <div class="prb-status completed">completed</div>
+                </li>
+                <li>
+                        <div class="prb-no">2</div>
+                        <div class="prb-statement">problem1 statement</div>
+                        <div class="prb-status on-process">on process</div>
+                </li>
+                <li>
+                        <div class="prb-no">3</div>
+                        <div class="prb-statement">problem1 statement</div>
+                        <div class="prb-status pending">pending</div>
+                </li>
+            </ul>
+    </div>
+   
+</body>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script>
+    //add active class in selected list item
+    let list=document.querySelectorAll('.list');
+    for(let i=0;i<list.length;i++){
+        list[i].onclick=function(){
+            let j=0;
+            while(j<list.length){
+                list[j].className='list';
+                j++;
+            }
+            list[i].className='active';
+        }
+    }
+</script>
+</html>

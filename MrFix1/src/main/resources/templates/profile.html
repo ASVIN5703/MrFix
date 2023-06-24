@@ -1,0 +1,71 @@
+ <!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="/css/profile.css">
+</head>
+<body>
+    <!--division for menu bar-->
+    <div class="navigation">
+        <!--creating a unordered list-->
+        <ul>
+            <!--list items-->
+            <li class="list active">
+                <a th:href="@{/profile}">
+                    <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
+                    <span class="title">Profile</span>
+                </a>
+            </li>
+            <li class="list ">
+                <a th:href="@{/userdashboard}">
+                    <span class="icon"><ion-icon name="clipboard-outline"></ion-icon></span>
+                    <span class="title">Dash Board</span>
+                </a>
+            </li>
+              
+            <li class="list">
+                <a th:href="@{/viewfeed}">
+                    <span class="icon"><ion-icon name="chatbubbles-outline"></ion-icon></span>
+                    <span class="title">Feedback</span>
+                </a>
+            </li>
+            <li class="list">
+                <a th:href="@{/userlogin}">
+                    <span class="icon"><ion-icon name="log-out-outline"></ion-icon></span>
+                    <span class="title">Sign out</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!--right side division-->
+    <div class="container">
+        <header><h1>Profile</h1><br><hr></header>
+        <div class="profile-details">
+			
+            <div class="details">Username</div><input class="username" type="text">
+            <div class="details">Email</div><input class="email" type="email" required>
+            <div class="details">Contact</div><input class="contact" type="number">
+            <div class="save"><button>Save</button></div>
+        </div>
+    </div>
+</body>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script>
+    //add active class in selected list item
+    let list=document.querySelectorAll('.list');
+    for(let i=0;i<list.length;i++){
+        list[i].onclick=function(){
+            let j=0;
+            while(j<list.length){
+                list[j].className='list';
+                j++;
+            }
+            list[i].className='active';
+        }
+    }
+</script>
+</html>

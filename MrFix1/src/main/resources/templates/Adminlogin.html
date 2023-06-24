@@ -2,11 +2,11 @@
 <html lang="en"   xmlns:th="http://www.thymeleaf.org" >
 <head>
      <meta charset="ISO-8859-1">
-    <title>UserLogin Page</title>
+    <title>AdminLogin Page</title>
        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
     <link rel="stylesheet"type="text/css" href="css/style.css">
-    <title>User login</title>
+    <title>Admin login</title>
     <style type="text/css">
         body{
             background-image: url("css/loginbg.jpg") ;
@@ -20,20 +20,25 @@
     <section>
         <div class="form-box">
             <div class="form-value">
-                <form role="form" th:action="@{/userlogin/verify}"  th:object="${userlo}"  method="post">
-                    <h2>Login</h2>
-                    <div class="inputbox">
+               <form role="form" th:action="@{/adminlogin/verify}"  th:object="${adminlo}"   method="post">
+				   <h2>Login</h2>
+				    <div class="inputbox">
                         <ion-icon name="person-outline"></ion-icon>
-                        <input type="text" th:field="*{user_name}"  required><lable for="">Username</lable>
+                        <input type="text"th:field="*{admin_name}"  required><lable for="">Admin Name</lable>
 
                     </div>
-                    <div class="inputbox">
+                     <div class="inputbox">
                          <ion-icon name="lock-closed-outline"></ion-icon>
-                         <input type="password" th:field="*{user_pass}"  required><lable for="">Password</lable>
+                         <input type="password" th:field="*{admin_pass}"  required><lable for="">Password</lable>
                         
                     </div>
                     <button>Log in</button>
-                </form>
+                    
+                     <ion-icon name="home-outline"></ion-icon>
+                    
+                    <a th:href="@{/adsignup}" class="reg">Not Registered?</a>
+              
+			   </form>
             </div>
         </div>
     </section>

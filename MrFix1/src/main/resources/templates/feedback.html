@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+           <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback</title>
+    <link rel="stylesheet" href="css\feedback.css">
+</head>
+<body>
+    <div class="navigation">
+        <ul>
+            <li class="list">
+                <a th:href="@{/profile}">
+                    <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
+                    <span class="title">Profile</span>
+                </a>
+            </li>
+            <li class="list ">
+                <a th:href="@{/userdashboard}">
+                    <span class="icon"><ion-icon name="clipboard-outline"></ion-icon></span>
+                    <span class="title">Dash Board</span>
+                </a>
+            </li>
+             
+            <li class="list active">
+                <a href="#">
+                    <span class="icon"><ion-icon name="chatbubbles-outline"></ion-icon></span>
+                    <span class="title">Feedback</span>
+                </a>
+            </li>
+            <li class="list">
+                <a th:href="@{/userlogin}">
+                    <span class="icon"><ion-icon name="log-out-outline"></ion-icon></span>
+                    <span class="title">Sign out</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="container">
+        <header><h1>Feedback</h1><br><hr></header>
+        <form role="form" th:action="@{/postfeed}" th:object="${feeds}" method="post">
+            <textarea name="comment" th:field="*{feedbacks}" placeholder="Your feedback..."></textarea>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+     <!--right side division-->
+    <div class="container">
+    
+        <h1 align="center">MyFeedbacks</h1> 
+             
+      
+        <table border="1" class="table table-striped table-responsive-md">
+            <thead>
+                <tr>
+                    <th>FeedbackId</th>
+                    <th>FeedBackst</th>
+                   
+                </tr>
+            </thead>
+            <tbody>
+                 <tr th:each="feed : ${listfeeds}">
+					 <td th:text="${feed.feedId}"></td>
+                    <td th:text="${feed.feedbacks}"></td>
+                 
+                     
+                </tr>
+            </tbody>
+      
+        </table>
+               
+    </div>
+</body>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</html>

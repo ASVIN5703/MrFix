@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" xlms:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/adminsignupstyle.css">
+    <title>Admin signup</title>
+    <style type="text/css">
+        body{
+            background-image: url("css/adminsignup.jpg") ;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div class="form-box">
+            <div class="form-value">
+                <form  role="form" th:action="@{/adminlogin/save}" th:object="${signup}" method="post">
+                    <h2>REGISTER</h2>
+                    <div class="inputbox">
+						
+                        <ion-icon name="person-outline"></ion-icon>
+                        <input type="text" th:field="*{admin_name}"  required><lable for="">AdminName</lable>
+                       
+                    </div>
+                    <div class="inputbox">
+                        <ion-icon name="mail-outline"></ion-icon>
+                        <input type="email" th:field="*{admin_email}"  required><lable for="">Email</lable>
+                    </div>
+                    <div class="inputbox">
+                        <ion-icon name="lock-closed-outline"></ion-icon>
+                         <input type="password" th:field="*{admin_pass}" required><lable for="">password</lable>
+                    </div>
+                  
+                    <button>Register</button>
+                    <div class="register">
+                        <p>Already hava a account? <a th:href="@{/adminlogin}">Login</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
